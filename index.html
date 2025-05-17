@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8">
+  <title>Hindi Essay Generator</title>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Noto Sans Devanagari', sans-serif;
+      background: #f5f5f5;
+      text-align: center;
+      padding: 30px;
+    }
+    select, button {
+      font-size: 18px;
+      padding: 10px;
+      margin: 10px;
+    }
+    #essay {
+      margin-top: 20px;
+      background: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      text-align: left;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Hindi Essay Generator</h1>
+  <p>नीचे विषय चुनें और निबंध पाएं</p>
+
+  <select id="topicSelect">
+    <option value="">-- विषय चुनें --</option>
+    <option value="environment">पर्यावरण संरक्षण</option>
+    <option value="education">शिक्षा का महत्व</option>
+    <option value="technology">मोबाइल का प्रभाव</option>
+    <option value="swachh">स्वच्छ भारत अभियान</option>
+    <option value="freedom">स्वतंत्रता दिवस</option>
+  </select>
+  <button onclick="showEssay()">निबंध दिखाएं</button>
+
+  <div id="essay"></div>
+
+  <script>
+    const essays = {
+      environment: `पर्यावरण हमारे जीवन का आधार है। पेड़-पौधे, जल, वायु सभी इसके मुख्य घटक हैं। आज पर्यावरण प्रदूषित हो रहा है जिससे मनुष्य का जीवन संकट में है। हमें पेड़ लगाने चाहिए, जल को बचाना चाहिए और प्रदूषण को कम करने के लिए साइकिल आदि का प्रयोग करना चाहिए।`,
+      education: `शिक्षा मानव जीवन का आधार है। यह व्यक्ति को ज्ञान, विवेक और सोचने की शक्ति प्रदान करती है। शिक्षा से ही समाज में बदलाव आता है और देश का विकास होता है। हमें सबको शिक्षा का अधिकार देना चाहिए।`,
+      technology: `मोबाइल आज के समय का अभिन्न हिस्सा बन चुका है। इसके कई फायदे हैं जैसे जानकारी प्राप्त करना, संपर्क बनाए रखना आदि। लेकिन अत्यधिक प्रयोग से यह स्वास्थ्य और सामाजिक जीवन पर नकारात्मक असर डालता है। इसका संतुलित उपयोग जरूरी है।`,
+      swachh: `स्वच्छ भारत अभियान भारत सरकार द्वारा शुरू किया गया एक महान प्रयास है जिसका उद्देश्य है देश को स्वच्छ और स्वस्थ बनाना। इस अभियान से लोगों में साफ-सफाई के प्रति जागरूकता आई है। हमें इसे अपनाना चाहिए और अपने देश को स्वच्छ बनाए रखना चाहिए।`,
+      freedom: `स्वतंत्रता दिवस भारत का राष्ट्रीय पर्व है जो 15 अगस्त को मनाया जाता है। 1947 में इसी दिन भारत को अंग्रेजों से आज़ादी मिली थी। इस दिन हम अपने स्वतंत्रता सेनानियों को याद करते हैं और देश के प्रति अपनी निष्ठा को दोहराते हैं।`
+    };
+
+    function showEssay() {
+      const topic = document.getElementById('topicSelect').value;
+      const essayDiv = document.getElementById('essay');
+      if (essays[topic]) {
+        essayDiv.innerText = essays[topic];
+      } else {
+        essayDiv.innerText = "कृपया एक विषय चुनें।";
+      }
+    }
+  </script>
+
+</body>
+</html>
