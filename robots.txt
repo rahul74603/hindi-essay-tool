@@ -1,4 +1,3 @@
 User-agent: *
 Allow: /
-
 Sitemap: https://hindi-essay-tool.vercel.app/sitemap.xml
